@@ -55,7 +55,7 @@ const styles=StyleSheet.create({
     container: {
         flex: 1,
         // justifyContent: 'center',
-        marginBottom: 250
+        marginBottom: 0
     },
     errorMessage: {
         fontSize: 16,
