@@ -29,7 +29,7 @@ const signup = (dispatch) => async ({ email, password }) => {
                 type: 'signup', 
                 payload: response.data.token 
             });
-            // navigate('TrackList');
+            navigate('TrackList');
         } catch (err) {
             console.log(err.response.data); 
             dispatch({ type: 'add_error', payload: 'Something went wrong with signup' })
