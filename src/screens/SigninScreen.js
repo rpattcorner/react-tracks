@@ -4,11 +4,22 @@ import { State } from 'react-native-gesture-handler';
 import AuthForm from '../components/AuthForm';
 import NavLink from '../components/NavLink';
 import { Context } from '../context/AuthContext';
+import { NavigationEvents } from 'react-navigation';
 
 const SigninScreen = () => {
-    const { state, signin } = useContext(Context);
+    const { state, signin, clearErrorMessage } = useContext(Context);
+    // <NavigationEvents 
+    //     // onWillBlur={() => { clearErrorMessage() }} ===
+    //     onWillFocus={clearErrorMessage}
+    // />
+
     return (
         <View style={styles.container}>
+            <NavigationEvents 
+                // onWillFocus={() => { clearErrorMessage() }} ===
+                onWillFocus={clearErrorMessage}
+            />
+            {/* <NavigationEvents onWillFocus={clearErrorMessage} /> */}
             <AuthForm 
                 headerText="Sign into your Account"
                 errorMessage={state.errorMessage}
