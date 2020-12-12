@@ -40,11 +40,11 @@ const Map = () => {
                 longitudeDelta: 0.01
             }}
             // remove region so the map itself does not shift with location
-            // region= {{ 
-            //     ...currentLocation.coords, 
-            //     latitudeDelta: 0.01,
-            //     longitudeDelta: 0.01
-            // }}
+            region= {{ 
+                ...currentLocation.coords, 
+                latitudeDelta: 0.01,
+                longitudeDelta: 0.01
+            }}
         >
             {/* <Polyline coordinates={points}/> */}
             <Circle
