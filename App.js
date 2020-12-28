@@ -5,11 +5,12 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 import AccountScreen from './src/screens/AccountScreen';
 import SigninScreen from './src/screens/SigninScreen';
 import SignupScreen from './src/screens/SignupScreen';
-import TrackCreateScreen from './src/screens/TrackCreateScreen';
+// import TrackCreateScreen from './src/screens/TrackCreateScreen';
 // import TrackDetailScreen from './src/screens/TrackDetailScreen';
 // import TrackListScreen from './src/screens/TrackListScreen';
 import { Provider as AuthProvider } from './src/context/AuthContext';
 import { Provider as LocationProvider } from './src/context/LocationContext';
+import { Provider as TuneProvider } from './src/context/TuneContext';
 import { setNavigator } from './src/navigationRef';
 
 import TuneListScreen from './src/screens/TuneListScreen';
@@ -34,10 +35,8 @@ const App = createAppContainer(switchNavigator);
 
 export default () => {
   return (
-    <LocationProvider>
-    <AuthProvider>
+    <TuneProvider>
       <App ref={(navigator) => setNavigator(navigator) }/>
-    </AuthProvider>
-    </LocationProvider>
+    </TuneProvider>
   );
 };
